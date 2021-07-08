@@ -3,11 +3,11 @@ import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 
 import Layout from '../../components/Layout'
-
+import ImageRenderer from '../../components/ImageRenderer'
 export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
   if (!frontmatter) return <></>
-
   return (
+      <>
       <Layout pageTitle={`${siteTitle} | ${frontmatter.title}`}>
         <Link href="/">
           <a>Back to post list</a>
@@ -16,10 +16,34 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
           <h1>{frontmatter.title}</h1>
           <p>By {frontmatter.author}</p>
           <div>
-            <ReactMarkdown children={markdownBody} />
+            <ReactMarkdown children={markdownBody} components={{ img: ImageRenderer }} />
           </div>
         </article>
       </Layout>
+      <style jsx>{`
+        article {
+          width: 100%;
+          max-width: 1200px;
+        }
+        .imgku {
+            width: 50px;
+        }
+        h1 {
+          font-size: 3rem;
+        }
+        h3 {
+          font-size: 2rem;
+        }
+        .hero {
+          width: 100%;
+        }
+        .back {
+          width: 100%;
+          max-width: 1200px;
+          color: #00a395;
+        }
+      `}</style>
+   </>   
   )
 }
 
