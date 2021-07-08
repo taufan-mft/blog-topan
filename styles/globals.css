@@ -14,3 +14,11 @@ a {
 * {
   box-sizing: border-box;
 }
+.tasya {
+  @media (min-width: 767px) {
+   maxWidth:"60%"
+ }
+ @media (max-width: 400px) {
+   maxWidth:"90%"
+ }
+}

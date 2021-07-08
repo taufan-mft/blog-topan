@@ -6,11 +6,11 @@ const Index = ({ posts, title, description, ...props }) => {
   return (
     <>
       <Layout pageTitle={title} description={description}>
+        <img src="topan.jpg" height="200px" style={{borderRadius: '50%'}}/>
         <h1 className="title">Blognya Topan</h1>
 
         <p className="description">
-          This is a simple blog built with Next, easily deployable on{' '}
-          <a href="https://url.netlify.com/r1j6ybSYU">Netlify</a>.
+          Hai! Aku Taufan. Disini aku bakal cerita
         </p>
         <main>
         <PostList posts={posts}/>
@@ -28,6 +28,7 @@ const Index = ({ posts, title, description, ...props }) => {
         .title {
           margin: 1rem auto;
           font-size: 3rem;
+          text-align: center;
         }
       `}</style>
     </>

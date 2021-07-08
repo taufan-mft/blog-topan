@@ -1,0 +1,10 @@
+.tasya {
+    width: 700px; 
+    object-fit: cover;
+ }
+ 
+ @media (max-width:767px){
+ .tasya {
+    width: 90%; 
+  }
+ }
