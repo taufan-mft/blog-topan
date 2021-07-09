@@ -10,19 +10,14 @@ const Index = ({ posts, title, description, ...props }) => {
         <h1 className="title">Blognya Topan</h1>
 
         <p className="description">
-          Hai! Aku Taufan. Disini aku bakal cerita
+          Hai! Aku Taufan. Disini aku bakal nulis tentang pengalaman aku, opini, cerita, dan lainnya.<br></br>
+          Kamu bisa kontak aku di Instagram <a href="https://instagram.com/taufan_mft">@taufan_mft.</a><br></br>
+           I hope you enjoy my writings! 🥰
         </p>
         <main>
         <PostList posts={posts}/>
         </main>
-        <p>
-          You can look at the repository for this project{' '}
-          <a href="https://github.com/cassidoo/next-netlify-blog-starter">
-            here
-          </a>
-          , and a tutorial on how to build it {` `}
-          <a href="https://url.netlify.com/ByVW0bCF8">here</a>.
-        </p>
+      
       </Layout>
       <style jsx>{`
         .title {
