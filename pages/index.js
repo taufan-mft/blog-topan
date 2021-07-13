@@ -35,9 +35,9 @@ export default Index
 export async function getStaticProps() {
   const configData = await import(`../siteconfig.json`)
   const posts = ((context) => {
-    const keys = context.keys()
+    const keys = context.keys().reverse()
     const values = keys.map(context)
-
+    console.log(keys)
     const data = keys.map((key, index) => {
       let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3)
       const value = values[index]

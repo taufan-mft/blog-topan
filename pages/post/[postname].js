@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
-
+import readingTime from 'reading-time'
 import Layout from '../../components/Layout'
 import ImageRenderer from '../../components/ImageRenderer'
 export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
+  const stats = readingTime(markdownBody);
   if (!frontmatter) return <></>
   return (
       <>
@@ -17,7 +18,7 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
         </div>
         <article>
           <h1>{frontmatter.title}</h1>
-          <p>By {frontmatter.author} | {frontmatter.date}</p>
+          <p>By {frontmatter.author} | {frontmatter.date} | {stats.text}</p>
           <div>
             <ReactMarkdown children={markdownBody} components={{ img: ImageRenderer }} />
           </div>
@@ -26,7 +27,7 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
       <style jsx>{`
         article {
           width: 100%;
-          max-width: 1200px;
+          max-width: 900px;
         }
         .imgku {
             width: 50px;
